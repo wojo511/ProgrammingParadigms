@@ -12,7 +12,7 @@ object lab4 extends App {
     findPrimes(List.range(2, toN))
   }
 
-  def returnPrimes(list: List[Int]): List[Int] = {
+  def returnPrimesFromList(list: List[Int]): List[Int] = {
 
     val listOfPrimes = primes(200)
 
@@ -102,41 +102,41 @@ object lab4 extends App {
   }
 
 
-  def typeOf(arg: AnyVal): String = {
+  def findType[T](arg: T): String = {
 
     arg match {
-      case _: Boolean => "Argument is a Boolean and Its Value is " + arg + "\n"
-      case _: Char => "Argument is a Character and its Value is " + arg + "\n"
-      case _: Int => "Argument is an INTEGER and its Value is " + arg + "\n"
-      case _: Float => "Argument is a Floating Number and its Value is " + arg + "\n"
-      case _: Double => "Argument is a Double and its Value is " + arg + "\n"
+      case _: Boolean => "Argument is a Boolean with value " + arg + "\n"
+      case _: Double => "Argument is a Double with value " + arg + "\n"
+      case _: Int => "Argument is an Integer with value " + arg + "\n"
+      case _: Float => "Argument is a Floating Number with value " + arg + "\n"
+      case _: String => "Argument is a String with value " + arg + "\n"
     }
   }
 
 
-  val aBool: AnyVal = true
-  val aChar: AnyVal = 'a'
-  val anInt: AnyVal = 1
-  val aFloat: AnyVal = 1.0f
-  val aDouble: AnyVal = 1.00
+  val bool = true
+  val string = "programming"
+  val int = 1
+  val float = 1.0f
+  val double = 1.00
 
-
-  print(typeOf(aBool))
-  print(typeOf(aChar))
-  print(typeOf(anInt))
-  print(typeOf(aFloat))
-  print(typeOf(aDouble))
-
-
-  println(returnPrimes(List(1, 2, 3, 4, 5, 6, 7, 8, 9)))
+  println("Task 1:")
+  println(returnPrimesFromList(List(1, 2, 3, 4, 5, 6, 7, 8, 9)))
+  println("Task 2:")
   println(calculator1(Negation(-4)))
+  println("Task 3:")
   println(calculator2(Calculator2.Add(4, 5)))
-
+  println("Task 4:")
   println(and(AND(true, false)))
   println(or(OR(true, false)))
   println(xor(XOR(true, false)))
   println(nand(NAND(true, false)))
   println(nor(NOR(true, false)))
-
+  println("Task 5:")
+  print(findType(bool))
+  print(findType(string))
+  print(findType(int))
+  print(findType(float))
+  print(findType(double))
 
 }
